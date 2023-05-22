@@ -10,6 +10,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Where;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -19,10 +20,13 @@ import org.springframework.data.annotation.Version;
 
 import com.evgensoft.spring.webshop.clothes.model.entity.user.User;
 
+import jakarta.persistence.Column;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @MappedSuperclass
+@Where(clause = "deleted = false")
 public abstract class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,6 +48,10 @@ public abstract class BaseEntity implements Serializable {
 
     @LastModifiedBy
     private User lastModifiedBy;
+
+    @Setter
+    @Column(name = "is_deleted")
+    private boolean isDeleted = Boolean.FALSE;
 
     @PrePersist
     private void onPersist() {
