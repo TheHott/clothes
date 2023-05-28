@@ -2,10 +2,10 @@ package com.evgensoft.spring.webshop.clothes.model.dto;
 
 import java.util.Date;
 
-import javax.persistence.MappedSuperclass;
 
 import com.evgensoft.spring.webshop.clothes.model.dto.user.UserDto;
 
+import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
 
 @Data

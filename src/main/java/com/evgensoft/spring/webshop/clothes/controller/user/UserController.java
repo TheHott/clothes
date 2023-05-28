@@ -31,6 +31,14 @@ public class UserController {
         return ResponseEntity.ok(convertToDto(userService.findById(id)));
     }
 
+    @GetMapping
+    public ResponseEntity<List<UserDto>> getAll() {
+        return ResponseEntity.ok(userService.findAll()
+        .stream()
+        .map(this::convertToDto)
+        .collect(Collectors.toList()));
+    }
+
     @GetMapping("/by-username")
     public ResponseEntity<List<UserDto>> getAllByUsername(@RequestParam String username) {
         return ResponseEntity.ok(userService.findAllByUsername("")

@@ -1,11 +1,10 @@
 package com.evgensoft.spring.webshop.clothes.model.entity;
 
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.MappedSuperclass;
-
 import com.evgensoft.spring.webshop.clothes.model.enums.ProductStatus;
 
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
 
 @Data

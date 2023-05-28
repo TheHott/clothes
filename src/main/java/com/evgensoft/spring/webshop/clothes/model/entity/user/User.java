@@ -1,10 +1,9 @@
 package com.evgensoft.spring.webshop.clothes.model.entity.user;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 import com.evgensoft.spring.webshop.clothes.model.entity.BaseEntity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
