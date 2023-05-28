@@ -10,9 +10,9 @@ import org.springframework.util.Assert;
 import com.evgensoft.spring.webshop.clothes.model.entity.BaseEntity;
 
 @NoRepositoryBean
-public interface BaseRepository<T, ID> extends JpaRepository<T, ID> {    
+public interface BaseRepository<T, ID> extends JpaRepository<T, Long> {    
     @Override
-    default void deleteById(ID id) {
+    default void deleteById(Long id) {
         Assert.notNull(id, "The given id must not be null!");
         this.delete(findById(id).orElseThrow(() -> new EmptyResultDataAccessException(
                 String.format("No %s entity with id %s exists!", "", id), 1)));

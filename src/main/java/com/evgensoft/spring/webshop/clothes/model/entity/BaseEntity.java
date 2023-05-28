@@ -30,7 +30,7 @@ import lombok.Setter;
 public abstract class BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @Version
     private long version;
