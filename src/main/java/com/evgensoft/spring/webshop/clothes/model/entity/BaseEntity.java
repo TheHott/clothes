@@ -3,7 +3,6 @@ package com.evgensoft.spring.webshop.clothes.model.entity;
 import java.io.Serializable;
 import java.util.Date;
 
-import org.hibernate.annotations.Where;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -25,10 +24,9 @@ import lombok.Setter;
 
 @Getter
 @MappedSuperclass
-@Where(clause = "deleted = false")
 public abstract class BaseEntity implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Version
